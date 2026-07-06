@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Anybody:wght@400;600;700;800;900&amp;family=Hanken+Grotesk:wght@400;500;600&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-low": "#1c1b1b",
+                    "surface-container-high": "#2a2a2a",
+                    "on-primary-container": "#6a2d00",
+                    "inverse-on-surface": "#313030",
+                    "surface-dim": "#131313",
+                    "primary-container": "#ff8c42",
+                    "surface-container-highest": "#353535",
+                    "tertiary-fixed": "#ffd8e7",
+                    "tertiary-container": "#d798b5",
+                    "surface-container-lowest": "#0e0e0e",
+                    "on-primary-fixed-variant": "#763300",
+                    "secondary-fixed": "#5af8fb",
+                    "inverse-surface": "#e5e2e1",
+                    "inverse-primary": "#9b4500",
+                    "primary": "#ffb68d",
+                    "outline": "#a48c7f",
+                    "on-secondary-fixed": "#002020",
+                    "on-surface": "#e5e2e1",
+                    "tertiary": "#f6b4d1",
+                    "surface-bright": "#393939",
+                    "background": "#131313",
+                    "on-primary-fixed": "#331200",
+                    "secondary-fixed-dim": "#2ddbde",
+                    "secondary-container": "#00cdd0",
+                    "primary-fixed": "#ffdbc9",
+                    "on-primary": "#532200",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#564338",
+                    "error-container": "#93000a",
+                    "surface-container": "#20201f",
+                    "on-surface-variant": "#ddc1b3",
+                    "on-secondary-fixed-variant": "#004f51",
+                    "surface-variant": "#353535",
+                    "on-tertiary-fixed-variant": "#68374f",
+                    "surface": "#131313",
+                    "primary-fixed-dim": "#ffb68d",
+                    "secondary": "#46eaed",
+                    "on-tertiary-container": "#5e2f47",
+                    "on-background": "#e5e2e1",
+                    "tertiary-fixed-dim": "#f6b4d1",
+                    "on-tertiary": "#4e2139",
+                    "on-tertiary-fixed": "#350c23",
+                    "on-secondary": "#003738",
+                    "on-error": "#690005",
+                    "on-error-container": "#ffdad6",
+                    "surface-tint": "#ffb68d",
+                    "on-secondary-container": "#005253"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin-desktop": "48px",
+                    "gutter": "20px",
+                    "xs": "8px",
+                    "xl": "64px",
+                    "sm": "16px",
+                    "base": "4px",
+                    "md": "24px",
+                    "lg": "40px",
+                    "margin-mobile": "16px"
+            },
+            "fontFamily": {
+                    "display-lg-mobile": ["Anybody"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-caps": ["Space Grotesk"],
+                    "headline-md": ["Anybody"],
+                    "headline-lg": ["Anybody"],
+                    "display-lg": ["Anybody"],
+                    "body-md": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "display-lg-mobile": ["40px", {"lineHeight": "1.1", "fontWeight": "800"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "display-lg": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.5", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .brutalist-card-shadow {
+            box-shadow: 6px 6px 0px 0px #f6b4d1;
+        }
+        .brutalist-button-shadow {
+            box-shadow: 4px 4px 0px 0px #000000;
+        }
+        .active-nav-shadow {
+            box-shadow: 4px 4px 0px 0px #f6b4d1;
+        }
+        body {
+            background-color: #131313;
+            color: #e5e2e1;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px #ffb68d;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar -->
+<nav class="w-full top-0 sticky border-b-2 border-outline-variant bg-background z-50 shadow-[4px_4px_0px_0px_#f6b4d1] flex justify-between items-center px-margin-desktop py-md">
+<div class="flex items-center gap-lg">
+<h1 class="font-display-lg text-headline-lg font-black text-primary uppercase italic tracking-tighter">ThriftVibe</h1>
+<div class="hidden md:flex gap-md">
+<a class="font-body-lg text-body-lg text-primary font-bold border-b-2 border-primary pb-1 hover:scale-105 transition-transform duration-200" href="#">New Arrivals</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant font-medium hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">Vintage</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant font-medium hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">Streetwear</a>
+<a class="font-body-lg text-body-lg text-on-surface-variant font-medium hover:text-primary transition-colors hover:scale-105 transition-transform duration-200" href="#">Sale</a>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<div class="relative hidden lg:block">
+<input class="bg-surface-container border-2 border-outline-variant px-sm py-xs w-64 focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition-all font-body-md text-body-md text-on-surface" placeholder="Search..." type="text"/>
+</div>
+<div class="flex gap-sm">
+<button class="hover:scale-105 transition-transform duration-200 active:translate-x-[2px] active:translate-y-[2px]">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="person">person</span>
+</button>
+<button class="hover:scale-105 transition-transform duration-200 active:translate-x-[2px] active:translate-y-[2px]">
+<span class="material-symbols-outlined text-primary text-headline-md" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center px-margin-desktop overflow-hidden border-b-2 border-outline-variant">
+<!-- Background Decoration -->
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-20 pointer-events-none">
+<div class="grid grid-cols-4 grid-rows-4 h-full w-full">
+<div class="border border-outline-variant"></div>
+<div class="border border-outline-variant bg-tertiary"></div>
+<div class="border border-outline-variant"></div>
+<div class="border border-outline-variant"></div>
+<div class="border border-outline-variant bg-secondary"></div>
+<div class="border border-outline-variant"></div>
+<div class="border border-outline-variant bg-primary"></div>
+<div class="border border-outline-variant"></div>
+</div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="font-label-caps text-label-caps bg-secondary text-on-secondary-container px-sm py-base inline-block mb-md border-2 border-black">GEN-Z APPROVED</span>
+<h2 class="font-display-lg text-display-lg mb-lg">
+                    Good Vibes, Great Finds: <br/>
+<span class="text-primary italic">Ur Style,</span>
+<span class="text-stroke font-black">Ur Story.</span>
+</h2>
+<div class="flex flex-wrap gap-md">
+<button class="bg-primary-container text-on-primary-container font-display-lg font-black text-headline-md px-lg py-sm border-2 border-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutalist-button-shadow uppercase">
+                        Shop Now
+                    </button>
+<button class="bg-transparent text-secondary font-display-lg font-black text-headline-md px-lg py-sm border-2 border-secondary hover:bg-secondary hover:text-on-secondary transition-all uppercase">
+                        Explore Vintage
+                    </button>
+</div>
+</div>
+<!-- Sticker Style Hero Image -->
+<div class="absolute right-margin-desktop top-1/2 -translate-y-1/2 hidden xl:block">
+<div class="relative w-[450px] h-[600px] border-2 border-outline brutalist-card-shadow rotate-3 bg-surface-container-high group hover:rotate-0 transition-transform duration-500 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A stylish young person wearing an oversized vintage graphic t-shirt and baggy cargo pants, posing in a gritty urban setting with neon lights. The aesthetic is modern brutalism with high contrast, vibrant orange and teal accents, and a grainy film texture that feels energetic and edgy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYuE5Dwqe3qqFwetP8MNp8P4oWo4RnSqNPGPTaXcVxFHATW-cOdXykIMY1MVWtCkcopCipOLsVD3uP5vTYfh_j5TlrFxIFGlPpa35zzDhq9Yx4djrkaAYiG360wp0ohAmptuSrPdcEXi2Gtm1vVvRdEEK0Ox0ulII4PVBm_jWLgcxeS4CSwFicC0YNe9dQ87b4HNJQ0PXW6tZpRYv-HeHQ7U40ptPisbbbjWiegJixZyRhx7j4ZIR0mZVws2m4qQYeIdS4ifn7O6o"/>
+<div class="absolute bottom-0 left-0 right-0 bg-primary-container border-t-2 border-black p-sm">
+<p class="font-label-caps text-label-caps text-on-primary-container">WEEKLY DROP #042 // CURATED STREETWEAR</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Koleksi Terbaru Section -->
+<section class="py-xl px-margin-desktop">
+<div class="flex justify-between items-end mb-lg border-b-4 border-primary pb-sm">
+<div>
+<span class="font-label-caps text-label-caps text-secondary mb-xs block">HOT OFF THE RACK</span>
+<h3 class="font-display-lg text-headline-lg uppercase italic">Koleksi Terbaru</h3>
+</div>
+<a class="font-label-caps text-label-caps border-2 border-outline-variant px-md py-xs hover:bg-primary hover:text-on-primary hover:border-black transition-all" href="#">VIEW ALL DROPS</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Product Card 1 -->
+<div class="group flex flex-col border-2 border-outline-variant hover:border-primary transition-colors brutalist-card-shadow hover:-translate-y-1 duration-200">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A high-quality vintage denim jacket with custom hand-painted graphic art on the back, displayed in a high-contrast industrial studio. The lighting is moody and dramatic with sharp shadows, highlighting the rugged texture of the denim and the vibrant orange paint strokes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6UzqBlX6c6s2dKDmqUU64CsknYhIgVFFdhhdoLpH9JssjgDvQEFpAuKOCjAKQY9ONBi73OdxI3nObZXG2_SwsTs_bFBISuiqV3SCpbvcSWs53N4p5bAPStFuODFxJ8tc6k0nqUVR7nR-QSIG_toGFE32qOy197weaX2GVpswcP24Deez_8uovitfOj-aH2D9DslLjrAnRc6G6iV6zNQhP-zSQLGpW-ZFtTsfZettvXGvhprjoMXJdyTzXPjdt1iFaNbyIW0FkWAI"/>
+<div class="absolute top-sm left-sm bg-tertiary text-on-tertiary-container font-label-caps text-[10px] px-xs py-[2px] border border-black uppercase font-bold">Rare</div>
+<div class="absolute bottom-sm right-sm bg-primary-container text-on-primary-container font-headline-md text-headline-md px-sm py-xs border-2 border-black rotate-[-5deg]">Rp 450k</div>
+</div>
+<div class="p-md bg-surface-container flex flex-col justify-between flex-grow">
+<h4 class="font-headline-md text-headline-md mb-sm uppercase">Vintage Levi's 501 Jacket</h4>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SIZE: L</span>
+<button class="bg-secondary p-xs rounded-full border border-black hover:bg-on-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="group flex flex-col border-2 border-outline-variant hover:border-primary transition-colors brutalist-card-shadow hover:-translate-y-1 duration-200">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="An oversized flannel shirt in a unique purple and charcoal plaid pattern, draped over a minimalist wire mannequin. The setting is a retro-futuristic store with glowing teal floor lights and clean brutalist lines, emphasizing a circular fashion aesthetic and sustainable style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4fho9PS9MsqDoIYeY8YWU2O8931TS9BoXPplkBnFnetFITe4F94T_ojZ5Rm7r0mK8Vmu1vzDPchOioHpemKbHm-AConi4bDyRvxaqmXo28OpuLxBHzIrU6ZFjDXeC56rCB5kSTQBNAhdYqXsaHjsSOjuNru8Dnx8oYFUMcyqUCnjZJ0So4E15t04X8Erwh3ervBPzBFynRHBMHfSVZDeCxKR0yOGFEzo_M-UTqHUT2tTqaT-eJniSehAb6WE8PElI6xgqzO_mglY"/>
+<div class="absolute top-sm left-sm bg-secondary text-on-secondary-container font-label-caps text-[10px] px-xs py-[2px] border border-black uppercase font-bold">Sustainable</div>
+<div class="absolute bottom-sm right-sm bg-primary-container text-on-primary-container font-headline-md text-headline-md px-sm py-xs border-2 border-black rotate-[3deg]">Rp 225k</div>
+</div>
+<div class="p-md bg-surface-container flex flex-col justify-between flex-grow">
+<h4 class="font-headline-md text-headline-md mb-sm uppercase">Oversized Plaid Flannel</h4>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SIZE: M</span>
+<button class="bg-secondary p-xs rounded-full border border-black hover:bg-on-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col border-2 border-outline-variant hover:border-primary transition-colors brutalist-card-shadow hover:-translate-y-1 duration-200">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A pair of retro 90s aesthetic high-waisted baggy trousers in earth-toned corduroy. The shot is low-angle, making the trousers look heroic against a backdrop of colorful urban graffiti. The colors are warm and nostalgic, perfectly matching the ThriftVibe brand palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn1jEtbWPe_5WUXG9UATBQDGDDI_3yCyH4G59lPuhq4NPXQVI3psVp_KERIF7Gu-0ilBMNsQNX0KuSoVRtNmxIuIt2QATWbvPpxM4_otojUxTjY_U4j7EbJSJ8SPEl1YLUvo9BpGJEarofaHV-veqbszmvsBJG4CHLtVSncF7E2CxU4XmJ0Wq-S9YlKrWJBi81miRa0Pz4HgXLCxpCWAYbvoBfri8GW0yTrHsysYeI1a4EhOyl8uk2mbkyUcQyPbJLis2doy4aa7Y"/>
+<div class="absolute bottom-sm right-sm bg-primary-container text-on-primary-container font-headline-md text-headline-md px-sm py-xs border-2 border-black rotate-[-2deg]">Rp 380k</div>
+</div>
+<div class="p-md bg-surface-container flex flex-col justify-between flex-grow">
+<h4 class="font-headline-md text-headline-md mb-sm uppercase">90s Retro Baggy Corduroy</h4>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SIZE: 32</span>
+<button class="bg-secondary p-xs rounded-full border border-black hover:bg-on-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col border-2 border-outline-variant hover:border-primary transition-colors brutalist-card-shadow hover:-translate-y-1 duration-200">
+<div class="relative aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant yellow windbreaker from the 80s with purple and teal geometric patterns. The jacket is modeled in a way that shows movement, with a background of blurred city lights. The aesthetic is high-energy, nostalgic, and unapologetically bold." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgWfZLPq5lGtXuB_iTtwJiGshcbTsG7y_gmx3UJJhqRK2HUoMgkHL2QT9EJuKfJzntBWlheC9OPNlkJ4s0_5skAP2FfcYJDxtirB2o8D1qncH3HtNNcrlib5SewsnKXNLD0YIAkvgtIFcAPyg69MeVv-3aTgtZRRXHgmHDUdEuUefgsT-FYGzBUPLyVEWpvoiyAIIQVQ7rT3s_reWg63DoAE102a0kIE1fdMmXcwh9_ZhvzA84okM1CWPWjCpzhAVUsVjR95HnbXs"/>
+<div class="absolute top-sm left-sm bg-primary text-on-primary font-label-caps text-[10px] px-xs py-[2px] border border-black uppercase font-bold">Iconic</div>
+<div class="absolute bottom-sm right-sm bg-primary-container text-on-primary-container font-headline-md text-headline-md px-sm py-xs border-2 border-black rotate-[6deg]">Rp 510k</div>
+</div>
+<div class="p-md bg-surface-container flex flex-col justify-between flex-grow">
+<h4 class="font-headline-md text-headline-md mb-sm uppercase">Colorblock 80s Windbreaker</h4>
+<div class="flex justify-between items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SIZE: XL</span>
+<button class="bg-secondary p-xs rounded-full border border-black hover:bg-on-secondary hover:text-secondary transition-colors">
+<span class="material-symbols-outlined" data-icon="add_shopping_cart">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Bento Banner -->
+<section class="px-margin-desktop py-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="md:col-span-2 bg-surface-container-high border-2 border-outline-variant p-lg brutalist-card-shadow flex flex-col justify-center relative overflow-hidden group">
+<div class="absolute -right-20 -bottom-20 w-64 h-64 border-4 border-primary opacity-20 rounded-full group-hover:scale-125 transition-transform duration-700"></div>
+<h3 class="font-display-lg text-headline-lg uppercase mb-md relative z-10">Don't Miss The Next Drop.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-md relative z-10">Join 50k+ rebels getting early access to exclusive thrift flips and streetwear grails.</p>
+<div class="flex flex-col sm:flex-row gap-base relative z-10">
+<input class="flex-grow bg-surface-container border-2 border-outline-variant px-sm py-md focus:ring-primary focus:border-primary" placeholder="Your Email Address" type="email"/>
+<button class="bg-secondary text-on-secondary font-display-lg font-black px-lg py-md border-2 border-black hover:bg-on-secondary hover:text-secondary transition-all brutalist-button-shadow">JOIN THE VIBE</button>
+</div>
+</div>
+<div class="bg-tertiary p-lg border-2 border-black brutalist-card-shadow flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-display-lg text-on-tertiary mb-md" data-icon="recycling" style="font-size: 64px">recycling</span>
+<h4 class="font-display-lg text-headline-md text-on-tertiary uppercase mb-sm">Circular Fashion</h4>
+<p class="font-body-md text-on-tertiary">Every piece saved from a landfill is a win for the planet. Shop responsibly.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full mt-xl border-t-2 border-outline-variant bg-surface-container-lowest text-secondary font-label-caps text-label-caps font-body-md text-body-md flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg gap-gutter">
+<div class="flex flex-col gap-sm items-center md:items-start">
+<h1 class="font-display-lg text-headline-md font-black text-on-surface uppercase">ThriftVibe</h1>
+<p class="max-w-xs text-on-surface-variant text-center md:text-left">© 2024 THRIFTVIBE. ALL RIGHTS RESERVED. CIRCULAR FASHION FOR THE REBELS.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-lg">
+<a class="text-on-surface-variant hover:text-secondary hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary" href="#">Sustainability</a>
+<a class="text-on-surface-variant hover:text-secondary hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary" href="#">Shipping</a>
+<a class="text-on-surface-variant hover:text-secondary hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary" href="#">Returns</a>
+<a class="text-on-surface-variant hover:text-secondary hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary" href="#">Privacy Policy</a>
+<a class="text-on-surface-variant hover:text-secondary hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-primary" href="#">Terms of Service</a>
+</div>
+<div class="flex gap-md">
+<a class="hover:scale-125 transition-transform" href="#"><span class="material-symbols-outlined">social_distance</span></a>
+<a class="hover:scale-125 transition-transform" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+<a class="hover:scale-125 transition-transform" href="#"><span class="material-symbols-outlined">groups</span></a>
+</div>
+</footer>
+<script>
+        // Interactive cursor or micro-interactions could be added here
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.style.transform = 'translate(2px, 2px)';
+                if (el.classList.contains('brutalist-button-shadow')) {
+                    el.style.boxShadow = 'none';
+                }
+            });
+            el.addEventListener('mouseup', () => {
+                el.style.transform = '';
+                if (el.classList.contains('brutalist-button-shadow')) {
+                    el.style.boxShadow = '4px 4px 0px 0px #000000';
+                }
+            });
+            el.addEventListener('mouseleave', () => {
+                el.style.transform = '';
+                if (el.classList.contains('brutalist-button-shadow')) {
+                    el.style.boxShadow = '4px 4px 0px 0px #000000';
+                }
+            });
+        });
+    </script>

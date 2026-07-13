@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { products } from "../data/products";
+import Button from "../components/ui/Button";
+import { formatPrice } from "../utils/format";
+import { scrollToElement } from "../helpers/dom";
+import { addToCart } from "../helpers/cart";
 
 export default function Home() {
-  const handleShopNow = () => {
-    document.getElementById("latest-collection")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <main>
       {/* Hero Section */}
@@ -33,18 +33,22 @@ export default function Home() {
             <span className="text-stroke font-black">Ur Story.</span>
           </h2>
           <div className="flex flex-wrap gap-md">
-            <button
-              onClick={handleShopNow}
-              className="bg-primary-container text-on-primary-container font-display-lg font-black text-headline-md px-lg py-sm border-2 border-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all brutalist-button-shadow uppercase cursor-pointer"
+            <Button
+              onClick={() => scrollToElement("latest-collection")}
+              variant="primary"
+              size="md"
             >
               Shop Now
-            </button>
-            <Link
+            </Button>
+            <Button
+              as={Link}
               to="/product/oversized-plaid-flannel"
-              className="bg-transparent text-secondary font-display-lg font-black text-headline-md px-lg py-sm border-2 border-secondary hover:bg-secondary hover:text-on-secondary transition-all uppercase flex items-center justify-center"
+              variant="outline"
+              size="md"
+              className="flex items-center justify-center"
             >
               Explore Vintage
-            </Link>
+            </Button>
           </div>
         </div>
         {/* Sticker Style Hero Image */}
@@ -75,12 +79,13 @@ export default function Home() {
               Koleksi Terbaru
             </h3>
           </div>
-          <button
-            onClick={handleShopNow}
-            className="font-label-caps text-label-caps border-2 border-outline-variant px-md py-xs hover:bg-primary hover:text-on-primary hover:border-black transition-all cursor-pointer"
+          <Button
+            onClick={() => scrollToElement("latest-collection")}
+            variant="ghost"
+            size="sm"
           >
             VIEW ALL DROPS
-          </button>
+          </Button>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
           {products.map((product) => (
@@ -103,7 +108,7 @@ export default function Home() {
                   </div>
                 )}
                 <div className="absolute bottom-sm right-sm bg-primary-container text-on-primary-container font-headline-md text-headline-md px-sm py-xs border-2 border-black rotate-[-5deg]">
-                  {product.price === 85000 ? "Rp 85k" : product.price === 450000 ? "Rp 450k" : product.price === 380000 ? "Rp 380k" : "Rp 510k"}
+                  {formatPrice(product.price)}
                 </div>
               </div>
               <div className="p-md bg-surface-container flex flex-col justify-between flex-grow">
@@ -118,7 +123,7 @@ export default function Home() {
                     className="bg-secondary p-xs rounded-full border border-black hover:bg-on-secondary hover:text-secondary transition-colors cursor-pointer"
                     onClick={(e) => {
                       e.preventDefault(); // Stop navigation
-                      alert(`${product.name} added to cart!`);
+                      addToCart(product);
                     }}
                   >
                     <span className="material-symbols-outlined" data-icon="add_shopping_cart">
@@ -156,12 +161,14 @@ export default function Home() {
                 type="email"
                 required
               />
-              <button
+              <Button
                 type="submit"
-                className="bg-secondary text-on-secondary font-display-lg font-black px-lg py-md border-2 border-black hover:bg-on-secondary hover:text-secondary transition-all brutalist-button-shadow cursor-pointer"
+                variant="secondary"
+                size="md"
+                className="py-md"
               >
                 JOIN THE VIBE
-              </button>
+              </Button>
             </form>
           </div>
           <div className="bg-tertiary p-lg border-2 border-black brutalist-card-shadow flex flex-col items-center justify-center text-center">

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { products } from "../data/products";
+import Button from "../components/ui/Button";
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -30,12 +31,14 @@ export default function ProductDetail() {
         <p className="font-body-lg text-body-lg text-on-surface-variant mb-lg">
           The vintage piece you are looking for has already been flipped or doesn't exist.
         </p>
-        <Link
+        <Button
+          as={Link}
           to="/"
-          className="bg-secondary text-on-secondary font-display-lg font-black text-headline-md px-lg py-sm border-2 border-black hover:bg-on-secondary hover:text-secondary transition-all brutalist-button-shadow uppercase"
+          variant="secondary"
+          size="md"
         >
           Back to Drops
-        </Link>
+        </Button>
       </div>
     );
   }
@@ -132,21 +135,25 @@ export default function ProductDetail() {
 
             {/* Actions */}
             <div className="flex flex-col gap-md">
-              <button
+              <Button
                 onClick={handleAddToCart}
-                className="group relative w-full bg-primary-container text-on-primary-container py-md font-display-lg text-headline-md uppercase italic border-2 border-black hard-shadow-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-pointer"
+                variant="primary"
+                size="md"
+                className="w-full py-md hard-shadow-primary hover:translate-x-1 hover:translate-y-1 hover:shadow-none bg-primary-container text-on-primary-container italic"
               >
                 Add to Cart
-              </button>
-              <button
+              </Button>
+              <Button
                 onClick={handleAddToWishlist}
-                className="flex items-center justify-center gap-sm w-full border-2 border-secondary text-secondary py-md font-label-caps text-label-caps uppercase hover:bg-secondary/10 transition-colors cursor-pointer"
+                variant="outline"
+                size="sm"
+                className="w-full py-md flex items-center justify-center gap-sm normal-case font-label-caps text-label-caps"
               >
                 <span className="material-symbols-outlined" data-icon="favorite">
                   favorite
                 </span>
                 Save to Wishlist
-              </button>
+              </Button>
             </div>
 
             {/* Extra Info */}
